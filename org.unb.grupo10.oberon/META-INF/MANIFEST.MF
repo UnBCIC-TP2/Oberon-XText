@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.unb.grupo10.oberon
+Bundle-ManifestVersion: 2
+Bundle-Name: org.unb.grupo10.oberon
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.unb.grupo10.oberon; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.unb.grupo10.oberon.parser.antlr.internal,
+ org.unb.grupo10.oberon.serializer,
+ org.unb.grupo10.oberon.parser.antlr,
+ org.unb.grupo10.oberon.generator,
+ org.unb.grupo10.oberon.services,
+ org.unb.grupo10.oberon,
+ org.unb.grupo10.oberon.oberon.util,
+ org.unb.grupo10.oberon.scoping,
+ org.unb.grupo10.oberon.oberon,
+ org.unb.grupo10.oberon.validation,
+ org.unb.grupo10.oberon.oberon.impl
+Import-Package: org.apache.log4j

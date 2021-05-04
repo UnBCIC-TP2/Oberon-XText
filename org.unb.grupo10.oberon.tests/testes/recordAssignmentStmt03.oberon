@@ -1,0 +1,24 @@
+MODULE SimpleModule;
+
+TYPE TVAGAS = RECORD
+		salaA : INTEGER;
+		salaA : INTEGER;
+	 END
+	 
+	 TMATRICULA = RECORD
+		alunoA : INTEGER;
+		alunoB : INTEGER;
+		alunoc : INTEGER;
+	 END
+VAR
+    vagas : TVAGAS;
+    matricula: TMATRICULA;    
+       
+BEGIN
+    vagas.salaA := 20;
+    vagas.salaB := 30;
+    matricula.alunoA := 180047205;
+    matricula.alunoB := 180108531
+END
+
+END SimpleModule.
