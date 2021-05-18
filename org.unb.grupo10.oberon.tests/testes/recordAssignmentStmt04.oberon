@@ -1,0 +1,26 @@
+MODULE SimpleModule;
+
+TYPE
+	Onibus = RECORD
+		A : INTEGER;
+        B : INTEGER;
+        C : INTEGER;
+	END
+
+VAR
+    
+    fila : ARRAY 10 OF INTEGER;
+    passageiros : Onibus;
+
+       
+BEGIN
+
+    n := 1;
+    passageiros.A := 1;
+    passageiros.B := 3;
+    passageiros.C := 2;
+    fila[n] := A   
+ 
+END
+
+END SimpleModule.
