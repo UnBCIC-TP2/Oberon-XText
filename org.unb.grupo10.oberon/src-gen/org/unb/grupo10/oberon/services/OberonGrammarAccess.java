@@ -597,8 +597,6 @@ public class OberonGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		
 		//Expression
 		// : left = TExpression (opr += Operation  right += Expression)*
-		//// | exp = TExpression '.' name = ID
-		//// | arrayBase = TExpression '[' index = Expression ']'
 		// ;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -979,12 +977,9 @@ public class OberonGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Keyword cExitEXITKeyword_11_0 = (Keyword)cExitAssignment_11.eContents().get(0);
 		
 		//TStatement returns Statement
-		// : //var = ID ':=' exp = Expression
-		// des = Designator (':=' exp = Expression)?
+		// : des = Designator (':=' exp = Expression)?
 		// | 'readInt'  '(' var = ID ')'
 		// | 'write' '(' exp = Expression ')'
-		// //| name = ID '(' args += Arguments? ')'
-		//// | 'IF' cond = Expression 'THEN' thenStmt = Statement ('ELSE' elseStmt = Statement)? 'END'
 		// | 'IF' cond = Expression 'THEN' thenStmt = Statement ('ELSIF' elsifs += elseIfStmt)* ('ELSE' elseStmt = Statement)? 'END'
 		// | 'WHILE' cond = Expression 'DO' stmt = Statement 'END'
 		// | 'REPEAT' stmt = Statement 'UNTIL' cond = Expression
@@ -997,28 +992,23 @@ public class OberonGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		// ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		// //var = ID ':=' exp = Expression
-		// des = Designator (':=' exp = Expression)?
-		// | 'readInt'  '(' var = ID ')'
-		// | 'write' '(' exp = Expression ')'
-		// //| name = ID '(' args += Arguments? ')'
-		//// | 'IF' cond = Expression 'THEN' thenStmt = Statement ('ELSE' elseStmt = Statement)? 'END'
-		// | 'IF' cond = Expression 'THEN' thenStmt = Statement ('ELSIF' elsifs += elseIfStmt)* ('ELSE' elseStmt = Statement)? 'END'
-		// | 'WHILE' cond = Expression 'DO' stmt = Statement 'END'
-		// | 'REPEAT' stmt = Statement 'UNTIL' cond = Expression
-		// | 'FOR' init = Statement 'TO' condition = Expression 'DO' stmt = Statement 'END'
-		// | 'FOR' var = ID 'IN' min = Expression '..' max = Expression 'DO' stmt = Statement 'END'
-		// | 'LOOP' stmt=Statement 'END'
-		// | 'RETURN' exp = Expression
-		// | 'CASE' exp = Expression 'OF' case = caseAlternative ('|' cases += caseAlternative)* ('ELSE' elseStmt= Statement)? 'END'
-		// | exit = 'EXIT'
+		//des = Designator (':=' exp = Expression)?
+		//| 'readInt'  '(' var = ID ')'
+		//| 'write' '(' exp = Expression ')'
+		//| 'IF' cond = Expression 'THEN' thenStmt = Statement ('ELSIF' elsifs += elseIfStmt)* ('ELSE' elseStmt = Statement)? 'END'
+		//| 'WHILE' cond = Expression 'DO' stmt = Statement 'END'
+		//| 'REPEAT' stmt = Statement 'UNTIL' cond = Expression
+		//| 'FOR' init = Statement 'TO' condition = Expression 'DO' stmt = Statement 'END'
+		//| 'FOR' var = ID 'IN' min = Expression '..' max = Expression 'DO' stmt = Statement 'END'
+		//| 'LOOP' stmt=Statement 'END'
+		//| 'RETURN' exp = Expression
+		//| 'CASE' exp = Expression 'OF' case = caseAlternative ('|' cases += caseAlternative)* ('ELSE' elseStmt= Statement)? 'END'
+		//| exit = 'EXIT'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		////var = ID ':=' exp = Expression
 		//des = Designator (':=' exp = Expression)?
 		public Group getGroup_0() { return cGroup_0; }
 		
-		////var = ID ':=' exp = Expression
 		//des = Designator
 		public Assignment getDesAssignment_0_0() { return cDesAssignment_0_0; }
 		
@@ -1340,8 +1330,6 @@ public class OberonGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		
 		//Designator
 		// : designator = TDesignator ('[' indexes += Expression ']'  |  '.' atribs += ID )*
-		//// | array = Expression '[' elem = Expression ']'
-		//// | record = Expression '.' name = ID
 		// ;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1438,16 +1426,13 @@ public class OberonGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cStmtStatementParserRuleCall_3_0 = (RuleCall)cStmtAssignment_3.eContents().get(0);
 		
 		//caseAlternative
-		// : //cond = Expression ':' stmt = Statement
-		// exp = Expression ('..' max = Expression)? ':' stmt = Statement
+		// : exp = Expression ('..' max = Expression)? ':' stmt = Statement
 		// ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		////cond = Expression ':' stmt = Statement
 		//exp = Expression ('..' max = Expression)? ':' stmt = Statement
 		public Group getGroup() { return cGroup; }
 		
-		////cond = Expression ':' stmt = Statement
 		//exp = Expression
 		public Assignment getExpAssignment_0() { return cExpAssignment_0; }
 		
@@ -1829,8 +1814,6 @@ public class OberonGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	//Expression
 	// : left = TExpression (opr += Operation  right += Expression)*
-	//// | exp = TExpression '.' name = ID
-	//// | arrayBase = TExpression '[' index = Expression ']'
 	// ;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
@@ -1879,12 +1862,9 @@ public class OberonGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//TStatement returns Statement
-	// : //var = ID ':=' exp = Expression
-	// des = Designator (':=' exp = Expression)?
+	// : des = Designator (':=' exp = Expression)?
 	// | 'readInt'  '(' var = ID ')'
 	// | 'write' '(' exp = Expression ')'
-	// //| name = ID '(' args += Arguments? ')'
-	//// | 'IF' cond = Expression 'THEN' thenStmt = Statement ('ELSE' elseStmt = Statement)? 'END'
 	// | 'IF' cond = Expression 'THEN' thenStmt = Statement ('ELSIF' elsifs += elseIfStmt)* ('ELSE' elseStmt = Statement)? 'END'
 	// | 'WHILE' cond = Expression 'DO' stmt = Statement 'END'
 	// | 'REPEAT' stmt = Statement 'UNTIL' cond = Expression
@@ -1905,8 +1885,6 @@ public class OberonGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	//Designator
 	// : designator = TDesignator ('[' indexes += Expression ']'  |  '.' atribs += ID )*
-	//// | array = Expression '[' elem = Expression ']'
-	//// | record = Expression '.' name = ID
 	// ;
 	public DesignatorElements getDesignatorAccess() {
 		return pDesignator;
@@ -1928,8 +1906,7 @@ public class OberonGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//caseAlternative
-	// : //cond = Expression ':' stmt = Statement
-	// exp = Expression ('..' max = Expression)? ':' stmt = Statement
+	// : exp = Expression ('..' max = Expression)? ':' stmt = Statement
 	// ;
 	public CaseAlternativeElements getCaseAlternativeAccess() {
 		return pCaseAlternative;
